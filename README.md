@@ -10,3 +10,8 @@ This is an Beginer Speedrun project project built in hours. Motive of the projec
 
 
 LINK: [expense-tracker](http://github.com/Gowtz)
+
+
+
+## In Project
+Sorry But Cant delete transaction for Now

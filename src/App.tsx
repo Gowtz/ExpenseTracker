@@ -12,6 +12,19 @@ function App() {
   useEffect(() => {
     setTotalAmount(totalIncome - totalExpense)
   }, [totalExpense, totalIncome])
+  useEffect(() => {
+    let data = JSON.parse(localStorage.getItem("transaction"))
+    console.log(data)
+    setHistory(data)
+    console.log(data)
+
+  }, [])
+  useEffect(() => {
+    if(history[0] !=null  ){
+    localStorage.setItem("transaction", JSON.stringify(history))
+    console.log("nodata")
+    }
+  }, [history])
 
   // Generate randomID
   function generateID(len: number) {
@@ -29,10 +42,11 @@ function App() {
       id: generateID(8),
       message: message,
       amount: amount,
-      type:"expense"
+      type: "expense"
     }
     setTotalExpense(prev => prev + amount)
-    setHistory([...history,transaction])
+    setHistory([...history, transaction])
+
   }
 
   function income(message: string, amount: number) {
@@ -40,12 +54,12 @@ function App() {
       id: generateID(8),
       message: message,
       amount: amount,
-      type:"income"
+      type: "income"
 
 
     }
     setTotalIncome(prev => prev + amount)
-    setHistory([...history,transaction])
+    setHistory([...history, transaction])
   }
 
 
