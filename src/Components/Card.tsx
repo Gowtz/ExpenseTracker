@@ -1,7 +1,13 @@
 import Form from "./Form";
 import History from "./History";
+import transaction from "../Types/types";
+interface input{
+    totaAmount:number,
+    setTotalAmount:any,
+    history:transaction[],
+}
 
-export default function Card() {
+export default function Card({totalAmount,income,history,expense,totalExpense,totalIncome}:any) {
     return (
         <>
 
@@ -10,26 +16,26 @@ export default function Card() {
                 {/* // Balance */}
                 <div className="Balance my-5">
                 <h1 className='text-4xl font-bold'>Your Balance</h1>
-                <h3 className='text-2xl'>$0.00</h3>
+                <h3 className='text-2xl'>${totalAmount}</h3>
                 </div>
 
                 {/* // income and expense */}
                 <div className="total-transactions w-74 h-20 bg-white rounded flex items-center justify-evenly mx-auto">
                     <div className="expense">
                         <h3 className=' text-xl'>Expense</h3>
-                        <span className="text-red-600">$0.00</span>
+                        <span className="text-red-600">${totalExpense}</span>
                     </div>
                     <div className="income">
                         <h3 className='text-xl'>Income</h3>
-                      <span className="text-green-600 ">$0.00</span>
+                      <span className="text-green-600 ">${totalIncome}</span>
                     </div>
                 </div>
 
 
 
-                <Form />
+                <Form expense={expense} income={income} />
 
-                <History />
+                <History history={history}/>
             </div>
 
         </>
