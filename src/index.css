@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body,
+footer {
+  background: #f4f4f4;
+}
+body{
+    position: relative;
+}
+* {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+/* footer {
+  z-index: 100;
+} */
+
+/* // remove arrow in number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
