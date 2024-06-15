@@ -1,12 +1,5 @@
 import Form from "./Form";
 import History from "./History";
-import transaction from "../Types/types";
-interface input{
-    totaAmount:number,
-    setTotalAmount:any,
-    history:transaction[],
-}
-
 export default function Card({totalAmount,income,history,expense,totalExpense,totalIncome}:any) {
     return (
         <>

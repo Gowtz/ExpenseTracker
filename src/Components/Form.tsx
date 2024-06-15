@@ -14,7 +14,7 @@ export default function Form({ expense, income }: any) {
                 <label className="text-gray-800">Amount</label>
                 <input type="number" className="w-full  h-12 px-3 rounded-md mt-2  mb-4 border border-gray-400"  placeholder="0" value={amount} onChange={(e) => {setAmount(parseInt(e.target.value)) }}/>
                 <div className="buttons pointer  flex justify-evenly mx-7 " >
-                    <button className="text-red-500 w-full h-full bg-slate-50 py-3 rounded-tl-md rounded-bl-md" onClick={(e) => {
+                    <button className="text-red-500 w-full h-full bg-slate-50 py-3 rounded-tl-md rounded-bl-md" onClick={() => {
                         if (!message || !amount ){
                             alert("Message and Amount are nessesary")
                         }
@@ -24,7 +24,7 @@ export default function Form({ expense, income }: any) {
                         // console.log(message,amount)
 
                     }}>expense</button>
-                    <button className="text-green-500 w-full h-full bg-slate-50  py-3 rounded-tr-md rounded-br-md" onClick={(e) => {
+                    <button className="text-green-500 w-full h-full bg-slate-50  py-3 rounded-tr-md rounded-br-md" onClick={() => {
                         if (!message || !amount ){
                             alert("Message and Amount are nessesary")
                         }

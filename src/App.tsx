@@ -13,16 +13,12 @@ function App() {
     setTotalAmount(totalIncome - totalExpense)
   }, [totalExpense, totalIncome])
   useEffect(() => {
-    let data = JSON.parse(localStorage.getItem("transaction"))
-    console.log(data)
+    let data = JSON.parse(localStorage.getItem("transaction") || '{}')
     setHistory(data)
-    console.log(data)
-
   }, [])
   useEffect(() => {
     if(history[0] !=null  ){
     localStorage.setItem("transaction", JSON.stringify(history))
-    console.log("nodata")
     }
   }, [history])
 
